@@ -1,0 +1,58 @@
+[
+  {
+    "task_id": "ZC787_MR_001",
+    "task_type": "memory_recall",
+    "case_id": "张辰_787",
+
+    "question": "张辰在第12次咨询中提到，自己在图书馆出现了什么身体状况？他当时是如何处理的，花了多久才缓过来？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "第12次咨询中，张辰提到自己在图书馆突然感到心悸和呼吸困难，疑似焦虑发作。他没有向别人求助，而是独自去了卫生间，花了大约半小时才平静下来。",
+
+    "answer_source": {
+      "primary_session": 12,
+      "related_sessions": [7, 10, 11],
+      "event_id": "E12",
+      "evidence_type": "event_content",
+      "answer_span_hint": "图书馆；突然感到心悸、呼吸困难；疑似焦虑发作；独自去卫生间；平静了半小时才缓过来"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出地点是图书馆，身体状况是心悸和呼吸困难，并说明他独自去卫生间平复",
+      "completeness": "是否同时包含地点、具体身体反应、疑似焦虑发作、处理方式和半小时后缓过来这几个事实",
+      "temporal_consistency": "是否识别这是第12次咨询/第14周左右的后期事件，发生在失眠、论文拖延、父亲电话压力之后",
+      "no_hallucination": "是否避免编造如被同学送医、正式诊断、药物治疗、住院、自伤行为或已经完全恢复等未出现信息"
+    }
+  },
+  {
+    "task_id": "ZC787_MR_002",
+    "task_type": "memory_recall",
+    "case_id": "张辰_787",
+
+    "question": "张辰在最后一次咨询中如何描述学期结束时的状态？他提到了哪些未完成或不确定的事情？当室友关心他时，他表面上如何回应？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "最后一次咨询中，张辰处在期末考试周后的身心透支状态，提到四门专业课挤在一起，几天基本没怎么睡，靠咖啡硬撑。他觉得自己期末考砸了，实习没找到，考研也没头绪，父亲还打电话问他在干什么，使他更加不知道如何回应。室友找他聊天、关心他的状态时，他嘴上仍然说“没事”，但心里其实很想哭。",
+
+    "answer_source": {
+      "primary_session": 15,
+      "related_sessions": [13, 14],
+      "event_id": "E15",
+      "evidence_type": "event_content_and_dialogue",
+      "answer_span_hint": "期末考试周；四门专业课；基本没怎么睡；靠咖啡顶过去；期末考砸了；实习没找到；考研也没头绪；室友找我聊天；嘴上说没事，心里其实很想哭"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出最后阶段的状态是期末后身心透支、睡眠不足、靠咖啡硬撑，并能回忆期末、实习、考研三个未完成/不确定事项",
+      "completeness": "是否同时包含四门专业课、没怎么睡、靠咖啡、期末考砸、实习没找到、考研没头绪、父亲询问、室友关心和表面回应“没事”",
+      "temporal_consistency": "是否识别这是最后一次咨询/第16周事件，发生在图书馆焦虑发作、室友曾注意到其异常、期末考试周压力之后",
+      "no_hallucination": "是否避免编造如已经正式挂科、已经考研失败、已经找到实习、室友明确疏远他、父亲辱骂他、正式休学、住院或彻底恢复等未出现信息"
+    }
+  }
+]

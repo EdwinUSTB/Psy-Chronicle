@@ -1,0 +1,43 @@
+[
+    {
+  "task_id": "CM129_MR_001",
+  "task_type": "memory_recall",
+  "case_id": "陈明_129",
+
+  "question": "在实习面试阶段，陈明在面试过程中主要遇到了什么具体问题？",
+
+  "input_to_model": {
+    "consultation_history": "完整历史"
+  },
+
+  "reference_answer": "他在面试中表达不流畅，紧张，回答问题时逻辑不清晰，导致面试表现不好。",
+
+  "answer_source": {
+    "primary_session": 6,
+    "event_id": "E6",
+    "evidence_type": "event_content",
+    "answer_span_hint": "表达不流畅…紧张…逻辑不清"
+  }
+},
+
+    {
+    "task_id": "CM129_MR_002",
+    "task_type": "memory_recall",
+    "case_id": "陈明_129",
+
+    "question": "在后期阶段，陈明出现了哪些明显的身体或情绪状态变化？",
+
+    "input_to_model": {
+        "consultation_history": "完整历史"
+    },
+
+    "reference_answer": "他出现了明显的焦虑和疲惫状态，包括失眠、情绪低落、注意力难以集中，以及身体疲劳感加重。",
+
+    "answer_source": {
+        "primary_session": 11,
+        "event_id": "E11",
+        "evidence_type": "event_content",
+        "answer_span_hint": "失眠…焦虑…疲惫…注意力差"
+    }
+    }
+]

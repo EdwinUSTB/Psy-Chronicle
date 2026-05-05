@@ -1,0 +1,60 @@
+[
+  {
+    "task_id": "ZM329_MR_001",
+    "task_type": "memory_recall",
+    "case_id": "张明_329",
+
+    "question": "张明在第13次咨询中提到，自己在图书馆准备报告时出现了什么身体状况？他当时去了哪里平复，心里产生了什么担忧？",
+
+    "input_to_model": {
+      "student_profile_summary": "提供完整学生画像",
+      "known_history_until": "full_case_after_final_session",
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "第13次咨询中，张明在图书馆准备报告时出现了第一次明显的焦虑发作，突然感到心悸、呼吸困难，不得不冲到卫生间平复。他当时感到强烈的失控和恐惧，甚至怀疑自己“是不是要疯了”。",
+
+    "answer_source": {
+      "primary_session": 13,
+      "related_sessions": [5, 9, 11, 12],
+      "event_id": "E13",
+      "evidence_type": "event_content",
+      "answer_span_hint": "图书馆准备报告；第一次明显的焦虑发作；心悸、呼吸困难；冲到卫生间平复；是不是要疯了"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出事件发生在图书馆准备报告时，身体反应为心悸和呼吸困难，并说明他冲到卫生间平复",
+      "completeness": "是否同时包含图书馆场景、准备报告、首次明显焦虑发作、身体症状、去卫生间平复以及‘是不是要疯了’的担忧",
+      "temporal_consistency": "是否识别这是第13次咨询/第15周的后期身心健康事件，发生在长期失眠、慢性胃炎、小组报告压力和父亲房贷压力之后",
+      "no_hallucination": "是否避免编造如正式住院、药物治疗、被诊断为精神疾病、自伤行为、被同学送医或已经完全恢复等未出现信息"
+    }
+  },
+  {
+    "task_id": "ZM329_MR_002",
+    "task_type": "memory_recall",
+    "case_id": "张明_329",
+
+    "question": "张明在最后一次咨询中看到同学们计划暑假时，别人都在计划什么？他自己只能计划什么？这让他第一次认真思考了什么问题？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "最后一次咨询中，学期结束时，张明看到同学们在计划暑假旅游或实习，而他自己只能计划找更多兼职。他坐在空荡的宿舍里，第一次认真思考自己拼命选择的这条路，究竟是否真的能改变家庭命运，还是只是在不断透支自己。",
+
+    "answer_source": {
+      "primary_session": 15,
+      "related_sessions": [8, 12, 14],
+      "event_id": "E15",
+      "evidence_type": "event_content",
+      "answer_span_hint": "同学们计划暑假旅游或实习；只能计划找更多兼职；坐在空荡的宿舍里；这条路真的能改变家庭命运吗；还是只是在透支自己"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出同学们计划暑假旅游或实习，而张明只能计划找更多兼职，并能回忆他对‘改变家庭命运/透支自己’的反思",
+      "completeness": "是否同时包含同学的暑假计划、张明自己的计划、空荡宿舍场景，以及对所选道路是否能改变家庭命运的怀疑",
+      "temporal_consistency": "是否识别这是最后一次咨询/第16周的最终阶段事件，发生在焦虑发作、期末考试与小组报告答辩之后",
+      "no_hallucination": "是否避免编造如他已经找到高薪实习、已经决定退学、已经放弃兼职、父母明确要求他辍学、家庭经济问题已经解决或他已经完全恢复等未出现信息"
+    }
+  }
+]

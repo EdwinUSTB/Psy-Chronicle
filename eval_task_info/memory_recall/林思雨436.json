@@ -1,0 +1,58 @@
+[
+  {
+    "task_id": "LSY436_MR_001",
+    "task_type": "memory_recall",
+    "case_id": "林思雨_436",
+
+    "question": "林思雨在第9次咨询中提到自己在图书馆发生了什么身体状况？后来是谁帮助了她，医生给出了什么判断和建议？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "第9次咨询中，林思雨在图书馆突然焦虑发作，出现呼吸困难。后来她被同学送到校医院，医生判断这是过度压力导致的急性焦虑，并建议她休息。",
+
+    "answer_source": {
+      "primary_session": 9,
+      "related_sessions": [5, 7, 8],
+      "event_id": "E9",
+      "evidence_type": "event_content",
+      "answer_span_hint": "图书馆突然焦虑发作；呼吸困难；被同学送到校医院；过度压力导致的急性焦虑；建议休息"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出事件发生在图书馆，具体表现为焦虑发作和呼吸困难，并说明是同学送她去校医院、医生判断为过度压力导致的急性焦虑",
+      "completeness": "是否同时包含地点、身体反应、帮助者、医生判断和医生建议这几个关键事实",
+      "temporal_consistency": "是否识别这是第9次咨询/第10周左右的中后期事件，发生在结构计算错误、男友提出冷静等压力之后",
+      "no_hallucination": "是否避免编造如正式住院、药物治疗、自伤行为、昏迷、长期休学或已经完全恢复等未出现信息"
+    }
+  },
+  {
+    "task_id": "LSY436_MR_002",
+    "task_type": "memory_recall",
+    "case_id": "林思雨_436",
+
+    "question": "林思雨在最后一次咨询中提到，毕业设计答辩结果如何？保研结果处于什么状态？她在等待中反思了什么问题？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "最后一次咨询中，林思雨提到毕业设计答辩已经通过，但成绩只是良好而不是优秀。保研结果当时尚未公布。她在等待中反思，完美主义差点毁掉一切，同时也在思考自己是否真的能接受一个“不顶尖”的未来。",
+
+    "answer_source": {
+      "primary_session": 15,
+      "related_sessions": [12, 14],
+      "event_id": "E15",
+      "evidence_type": "event_content_and_dialogue",
+      "answer_span_hint": "毕业设计答辩通过；成绩只是良好而非优秀；保研结果尚未公布；完美主义差点毁掉一切；是否能接受不顶尖的未来"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出答辩通过、成绩为良好而非优秀、保研结果尚未公布，以及她反思完美主义和‘不顶尖’未来的问题",
+      "completeness": "是否同时包含答辩结果、成绩等级、保研状态和等待中的反思内容",
+      "temporal_consistency": "是否识别这是最后一次咨询/第16周事件，发生在截止前48小时接受不完美、通宵完成最终图纸和计算书之后",
+      "no_hallucination": "是否避免编造如答辩失败、成绩优秀、保研已经成功或失败、导师公开批评、正式退学、已经完全接受不完美或彻底解决完美主义等未出现信息"
+    }
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "task_id": "LSY822_MR_001",
+    "task_type": "memory_recall",
+    "case_id": "林思雨_822",
+
+    "question": "林思雨在第9次咨询中提到，小组项目汇报前室友B负责的部分出了什么问题？林思雨做了什么，汇报时发生了什么让她感到被利用？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "第9次咨询中，小组项目汇报前，林思雨发现同组的室友B负责的部分有严重错误，于是熬夜帮忙修改。汇报时，室友B受到了表扬，却没有提到林思雨的帮助。其他组员私下为她不平，但她表面上只是说“没关系”。",
+
+    "answer_source": {
+      "primary_session": 9,
+      "related_sessions": [2, 5],
+      "event_id": "E9",
+      "evidence_type": "event_content",
+      "answer_span_hint": "室友B负责的部分有严重错误；熬夜帮忙修改；汇报时室友B受到表扬；未提及她的帮助；其他组员私下为她不平；她只是说“没关系”"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出室友B负责部分有严重错误、林思雨熬夜帮忙修改、汇报时室友B被表扬却未提及她的帮助",
+      "completeness": "是否同时包含问题内容、林思雨的实际付出、汇报时的结果、其他组员的反应以及她表面回应“没关系”",
+      "temporal_consistency": "是否识别这是第9次咨询/第10周左右的中后期事件，而非早期实验心理学分工或母亲深夜电话事件",
+      "no_hallucination": "是否避免编造如林思雨当场质问室友B、与室友激烈争吵、老师公开批评室友B、林思雨主动邀功或小组项目失败等未出现信息"
+    }
+  },
+  {
+    "task_id": "LSY822_MR_002",
+    "task_type": "memory_recall",
+    "case_id": "林思雨_822",
+
+    "question": "林思雨在第14次咨询中尝试向室友表达了什么小需求？室友当时和之后有什么反应？林思雨随后又做了什么？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "第14次咨询中，在心理咨询师鼓励下，林思雨尝试向室友表达一个小需求：希望对方晚上11点后戴耳机看视频。室友当时愣了一下，说“好吧”，但随后两天明显冷淡。林思雨很快退回迎合模式，买奶茶向室友道歉。",
+
+    "answer_source": {
+      "primary_session": 14,
+      "related_sessions": [1, 5, 9, 10],
+      "event_id": "E13",
+      "evidence_type": "event_content",
+      "answer_span_hint": "希望晚上11点后戴耳机看视频；室友愣了一下说“好吧”；随后两天明显冷淡；退回迎合模式；买奶茶道歉"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出她表达的小需求是希望室友晚上11点后戴耳机看视频，以及室友先答应后冷淡、她买奶茶道歉",
+      "completeness": "是否同时包含咨询师鼓励、具体需求、室友即时反应、后续两天冷淡、林思雨退回迎合模式并道歉",
+      "temporal_consistency": "是否识别这是第14次咨询/第14周左右的后期事件，发生在多次过度付出、被利用、焦虑发作和求职受挫之后",
+      "no_hallucination": "是否避免编造如室友明确拒绝、发生争吵、林思雨成功建立边界、室友主动道歉、宿舍关系彻底改善或彻底破裂等未出现信息"
+    }
+  }
+]

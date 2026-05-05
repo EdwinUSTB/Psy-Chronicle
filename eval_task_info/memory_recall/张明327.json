@@ -1,0 +1,58 @@
+[
+  {
+    "task_id": "ZM327_MR_001",
+    "task_type": "memory_recall",
+    "case_id": "张明_327",
+
+    "question": "张明在第13次咨询中提到，自己连续两天的饮食情况如何？他在图书馆出现了哪些身体反应，之后是如何处理的？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "第13次咨询中，张明提到自己连续两天几乎没有进食，只靠咖啡维持。在图书馆时，他突然感到头晕、手抖，不得不提前回宿舍休息；但即使躺下后，他仍然无法入睡。",
+
+    "answer_source": {
+      "primary_session": 13,
+      "related_sessions": [9, 11, 12],
+      "event_id": "E13",
+      "evidence_type": "event_content_and_dialogue",
+      "answer_span_hint": "连续两天几乎未进食；只靠咖啡维持；在图书馆突然头晕、手抖；提前回宿舍休息；躺下后仍无法入睡"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出连续两天几乎未进食、只靠咖啡维持，以及图书馆中出现头晕和手抖",
+      "completeness": "是否同时包含饮食变化、咖啡维持、图书馆身体反应、提前回宿舍和躺下后仍无法入睡",
+      "temporal_consistency": "是否识别这是第13次咨询/第15周的后期身心健康事件，发生在论文截止压力和母亲失望电话之后",
+      "no_hallucination": "是否避免编造如正式晕倒、被送医、药物治疗、住院、休学、自伤行为或已经恢复正常饮食等未出现信息"
+    }
+  },
+  {
+    "task_id": "ZM327_MR_002",
+    "task_type": "memory_recall",
+    "case_id": "张明_327",
+
+    "question": "张明在最后一次咨询中提到，最后一门考试结束后同学们邀请他做什么？他最终如何回应，之后一个人在宿舍做了什么？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "最后一次咨询中，最后一门考试结束后，同学们相约聚餐庆祝学期结束，也邀请了张明。张明收到邀请后犹豫再三，最终还是没有去。他一个人留在宿舍收拾行李，准备回家面对母亲。",
+
+    "answer_source": {
+      "primary_session": 14,
+      "related_sessions": [2, 6, 10, 13],
+      "event_id": "E14",
+      "evidence_type": "event_content_and_dialogue",
+      "answer_span_hint": "最后一门考试结束；同学们相约聚餐庆祝学期结束；收到邀请；犹豫再三后还是没去；独自在宿舍收拾行李；准备回家面对母亲"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出同学邀请他聚餐庆祝学期结束，而他犹豫后没有去",
+      "completeness": "是否同时包含考试结束、聚餐邀请、犹豫再三、最终未参加、独自收拾行李和准备回家面对母亲",
+      "temporal_consistency": "是否识别这是最后一次咨询/第16周事件，发生在长期社交回避、室友曾主动关心和身心耗竭之后",
+      "no_hallucination": "是否避免编造如他参加了聚餐、与同学发生冲突、母亲已经到校、他已经与母亲摊牌、彻底恢复社交或完全断绝同学关系等未出现信息"
+    }
+  }
+]

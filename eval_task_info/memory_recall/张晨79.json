@@ -1,0 +1,58 @@
+[
+  {
+    "task_id": "ZC79_MR_001",
+    "task_type": "memory_recall",
+    "case_id": "张晨_79",
+
+    "question": "张晨在第13次咨询中提到，自己曾在心理咨询中心外做了什么？他为什么最后离开？这一阶段他的身体和生活状态有哪些变化？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "第13次咨询中，张晨提到自己曾在心理咨询中心外徘徊了半小时，但最后还是离开了，因为他认为心理咨询“解决不了实际问题”。这一阶段他继续靠咖啡和廉价面包维持生活，体重明显下降，失眠也进一步加剧。",
+
+    "answer_source": {
+      "primary_session": 13,
+      "related_sessions": [9, 11, 12],
+      "event_id": "E13",
+      "evidence_type": "event_content",
+      "answer_span_hint": "在心理咨询中心外徘徊半小时后离开；认为“解决不了实际问题”；靠咖啡和廉价面包维持；体重明显下降；失眠加剧"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出他在心理咨询中心外徘徊半小时后离开，并说明原因是认为咨询解决不了实际经济问题",
+      "completeness": "是否同时包含徘徊地点与时长、离开原因、咖啡和廉价面包、体重下降、失眠加剧这几个关键事实",
+      "temporal_consistency": "是否识别这是第13次咨询/第15周左右的后期事件，发生在课堂展示躯体症状、期末大作业创作阻滞和父亲停止经济支持之后",
+      "no_hallucination": "是否避免编造如已经正式接受长期心理咨询、被诊断、用药、住院、彻底放弃学业或已经解决经济压力等未出现信息"
+    }
+  },
+  {
+    "task_id": "ZC79_MR_002",
+    "task_type": "memory_recall",
+    "case_id": "张晨_79",
+
+    "question": "张晨在最后阶段收到了一份怎样的实习邀约？这份实习的薪资情况如何？他在签约前主要犹豫什么？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "最后阶段，张晨收到了一家小型设计工作室的实习邀约，但薪资只能覆盖基本生活。他在签约前感到犹豫，不确定这究竟是对现实的妥协，还是迈向经济独立的第一步。",
+
+    "answer_source": {
+      "primary_session": 15,
+      "related_sessions": [8, 14],
+      "event_id": "E15",
+      "evidence_type": "event_content",
+      "answer_span_hint": "收到一家小型设计工作室的实习邀约；薪资仅能覆盖基本生活；签约前犹豫；现实妥协；迈向经济独立的第一步"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出实习来自小型设计工作室，薪资只能覆盖基本生活，并说明他对签约意义感到犹豫",
+      "completeness": "是否同时包含实习机构类型、薪资水平、签约前犹豫，以及‘现实妥协/经济独立第一步’这两个矛盾理解",
+      "temporal_consistency": "是否识别这是最后阶段/第16周事件，发生在实习申请被拒、期末作品完成和家庭经济支持断裂之后",
+      "no_hallucination": "是否避免编造如拿到高薪offer、已经正式签约、进入知名大厂、完全放弃艺术理想、家庭经济问题已经解决或已经实现经济独立等未出现信息"
+    }
+  }
+]

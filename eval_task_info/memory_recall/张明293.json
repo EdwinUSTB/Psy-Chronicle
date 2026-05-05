@@ -1,0 +1,58 @@
+[
+  {
+    "task_id": "ZM293_MR_001",
+    "task_type": "memory_recall",
+    "case_id": "张明_293",
+
+    "question": "张明在第14次咨询中提到，自己在食堂听到了什么内容？他当时意识到自己在暑期实习准备上处于什么状态？之后他做了什么？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "第14次咨询中，张明在食堂听到隔壁桌同学讨论暑期实习offer，大家似乎都已经拿到offer并在比较哪家公司更好。相比之下，他意识到自己连简历都还没开始做，也没有投递任何实习。他感到麻木和无力，觉得别人都在往前跑，而自己连起跑线都站不上去。之后他独自在操场走了好几圈，脑子里一片空白。",
+
+    "answer_source": {
+      "primary_session": 14,
+      "related_sessions": [5, 9, 10, 12],
+      "event_id": "E14",
+      "evidence_type": "event_content_and_dialogue",
+      "answer_span_hint": "食堂听到同学讨论暑期实习offer；他们好像都拿到offer了；我连简历都没开始做；在操场走了好几圈；别人都在往前跑，我连起跑线都站不上去"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出他在食堂听到同学讨论暑期实习offer，并意识到自己连简历都没开始做、没有投递实习",
+      "completeness": "是否同时包含食堂场景、同学讨论offer、自己未做简历/未投递、操场走了很久、麻木无力或落后感",
+      "temporal_consistency": "是否识别这是第14次咨询/第16周的后期生涯发展事件，而非早期电路分析听不懂或第12次信号与系统复习困难",
+      "no_hallucination": "是否避免编造如已经收到实习拒信、参加过面试、拿到offer、被同学嘲笑、已经决定转专业或已经放弃学业等未出现信息"
+    }
+  },
+  {
+    "task_id": "ZM293_MR_002",
+    "task_type": "memory_recall",
+    "case_id": "张明_293",
+
+    "question": "张明在最后一次咨询中，日记里写下了哪句核心比喻？他如何解释这个比喻？他对假期回家有什么打算和不确定感？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "最后一次咨询中，张明在日记里写下：“我好像在一个安全的笼子里慢慢枯萎。”他解释说，自己的生活像被安排在一条固定轨道上：上课、复习、应付作业，从大一到大四学完专业课，然后找一个对口工作，最好是大厂或国企；这条路看起来安全、不容易出错，但也让他觉得所有可能性都被提前锁死，像植物在没有阳光的地方慢慢失去水分。最后，他决定假期回家和父母谈谈，但仍不确定自己能否真正开口。",
+
+    "answer_source": {
+      "primary_session": 15,
+      "related_sessions": [11, 12, 13, 14],
+      "event_id": "E15",
+      "evidence_type": "event_content_dialogue_and_summary",
+      "answer_span_hint": "安全的笼子里慢慢枯萎；固定的轨道；上课、复习、应付作业；找个对口工作，大厂或者国企；所有可能性都被提前锁死；假期回家和父母谈谈；不确定能否开口"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确复述‘安全的笼子里慢慢枯萎’这一核心比喻，并说明其对应的是被稳定专业路径保护但也窒息的感受",
+      "completeness": "是否包含日记原句、固定轨道/对口工作路径、失去可能性与活力、假期想和父母谈谈、但不确定能否开口",
+      "temporal_consistency": "是否识别这是最后一次咨询/学期最后一天的事件，发生在信号与系统焦虑、科幻社聚会推脱和实习回避之后",
+      "no_hallucination": "是否避免编造如已经和父母摊牌、父母明确反对、已经转专业、已经退学、已经找到实习或完全摆脱家庭期待等未出现信息"
+    }
+  }
+]

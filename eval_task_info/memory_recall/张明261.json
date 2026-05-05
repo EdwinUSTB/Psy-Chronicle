@@ -1,0 +1,58 @@
+[
+  {
+    "task_id": "ZM261_MR_001",
+    "task_type": "memory_recall",
+    "case_id": "张明_261",
+
+    "question": "张明在第13次咨询中提到，自己在图书馆复习时发生了什么身体状况？是谁把他送到哪里？医生给出了什么判断和建议？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "第13次咨询中，张明在图书馆复习化学时突然出现心悸、呼吸困难、胸口发紧、眼前发黑等症状，感觉自己快要晕倒甚至快死了。后来同学把他送到校医院，医生诊断为急性焦虑发作，并建议他休息，同时考虑进行心理咨询。",
+
+    "answer_source": {
+      "primary_session": 13,
+      "related_sessions": [9, 10, 14],
+      "event_id": "E13",
+      "evidence_type": "event_content_dialogue_and_summary",
+      "answer_span_hint": "图书馆复习；心悸、呼吸困难、胸口发紧、眼前发黑；同学送到校医院；急性焦虑发作；建议休息并考虑心理咨询"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出事件发生在图书馆复习化学时，身体反应包括心悸、呼吸困难、胸口发紧/眼前发黑，并说明同学送他到校医院",
+      "completeness": "是否同时包含发生场景、具体身体症状、帮助者、送医地点、医生判断和医生建议",
+      "temporal_consistency": "是否识别这是第13次咨询/第14周的后期身心健康事件，而非早期期中考试不及格或第14次总评压力事件",
+      "no_hallucination": "是否避免编造如正式住院、药物治疗、休学、自伤行为、长期诊断或症状已经完全恢复等未出现信息"
+    }
+  },
+  {
+    "task_id": "ZM261_MR_002",
+    "task_type": "memory_recall",
+    "case_id": "张明_261",
+
+    "question": "张明在最后一次咨询中回忆化学期末考试时，具体描述了怎样的考试状态？他后来初步意识到自己的学习困难可能卡在哪里？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "最后一次咨询中，张明提到化学期末考试时，卷子发下来后大脑再次一片空白，很多题似曾相识却无从下笔；虽然公式背过、题也做过，但在考场上仍然想不起来、写不出来，并伴随手抖、出汗等反应。他觉得挂科几乎已成定局。咨询中他初步意识到，问题可能不只是‘没背会’，而是卡在‘记得公式’和‘在考场压力下灵活运用公式’之间。",
+
+    "answer_source": {
+      "primary_session": 15,
+      "related_sessions": [9, 13, 14],
+      "event_id": "E15",
+      "evidence_type": "event_content_dialogue_and_summary",
+      "answer_span_hint": "化学考完了；卷子发下来脑子就空了；题都复习过，公式也背了，可就是写不出来；挂科几乎已成定局；背和灵活运用之间有鸿沟"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出化学期末考试中大脑空白、题目似曾相识但无从下笔、公式背过却写不出来，以及他认为挂科几乎成定局",
+      "completeness": "是否同时包含考试场景、认知反应、身体反应、失败感，以及‘记忆公式’与‘灵活运用’之间的困难",
+      "temporal_consistency": "是否识别这是最后一次咨询/第16周的期末考试事件，发生在第14次总评压力和第13次急性焦虑发作之后",
+      "no_hallucination": "是否避免编造如成绩已经正式公布、确定被退学、已经补考失败、老师当场批评、父母已经知道结果或已经完全放弃专业等未出现信息"
+    }
+  }
+]

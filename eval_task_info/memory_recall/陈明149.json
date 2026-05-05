@@ -1,0 +1,48 @@
+[
+  {
+    "task_id": "CM149_MR_001",
+    "task_type": "memory_recall",
+    "case_id": "陈明_149",
+    "question": "陈明在第8次咨询中提到的科研助理机会，具体是什么项目？这个机会和他的现实压力之间有什么直接冲突？",
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史"
+    },
+    "reference_answer": "第8次咨询中，陈明提到的科研助理机会是一个关于本地濒危植物种群恢复的项目。他对这个项目很感兴趣，觉得它连接了自己童年对生物和自然的好奇心。但这个机会每周需要投入约20小时，会挤占他便利店兼职和周末工作的时间，导致收入减少，因此和他的经济压力发生直接冲突。",
+    "answer_source": {
+      "primary_session": 8,
+      "related_sessions": [],
+      "event_id": "E8",
+      "evidence_type": "dialogue_and_summary",
+      "answer_span_hint": "每周20小时；本地濒危植物的种群恢复；晚上还得去便利店打工，周末也排满了；科研热情与经济现实间强烈拉扯"
+    },
+    "evaluation_focus": {
+      "accuracy": "是否准确指出项目内容是本地濒危植物种群恢复，以及冲突来自每周20小时投入与兼职收入/时间安排之间的矛盾",
+      "completeness": "是否包含项目主题、陈明的兴趣来源、时间投入要求、兼职收入受影响这几个关键点",
+      "temporal_consistency": "是否识别该事件发生在第8次咨询的中期阶段，而非早期生活费危机或后期论文事件",
+      "no_hallucination": "是否避免编造如已经获得科研助理岗位、导师明确录取、项目有高额补贴或陈明最终放弃学业等未出现信息"
+    }
+  },
+  {
+    "task_id": "CM149_MR_002",
+    "task_type": "memory_recall",
+    "case_id": "陈明_149",
+    "question": "陈明在第14次咨询中提到论文丢失事件时，具体发生了什么？他当时对这件事产生了怎样的自我评价？",
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史"
+    },
+    "reference_answer": "第14次咨询中，陈明提到自己在网吧熬到凌晨四点写论文，后来因为电脑蓝屏导致论文丢失。事件发生后，他非常疲惫、无力和自责，觉得自己本可以更小心、应该早点开始写或多备份几份，并把责任都归到自己身上，认为自己‘配不上安慰’，甚至产生‘所有错都在我’的自我评价。",
+    "answer_source": {
+      "primary_session": 14,
+      "related_sessions": [],
+      "event_id": "E14",
+      "evidence_type": "dialogue_and_summary",
+      "answer_span_hint": "电脑蓝屏导致论文丢失；熬到凌晨四点；我配不上安慰；本可以更小心；所有错都在我"
+    },
+    "evaluation_focus": {
+      "accuracy": "是否准确指出事件是网吧写论文时电脑蓝屏导致论文丢失，而不是普通拖延或论文被老师否定",
+      "completeness": "是否包含发生地点/情境、电脑蓝屏、论文丢失、极度疲惫自责、将责任全部归因于自己等关键点",
+      "temporal_consistency": "是否识别这是第14次咨询的后期事件，而不是早期小测失败、科研助理机会或食堂焦虑发作",
+      "no_hallucination": "是否避免编造如论文被判抄袭、老师公开批评、学校处分、正式退学或论文最终不及格等未出现信息"
+    }
+  }
+]

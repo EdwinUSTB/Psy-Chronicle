@@ -1,0 +1,58 @@
+[
+  {
+    "task_id": "LSY528_MR_001",
+    "task_type": "memory_recall",
+    "case_id": "林思雨_528",
+
+    "question": "林思雨在第8次咨询中提到，父母未经商量为她做了什么安排？这件事涉及多少费用，她最终是如何处理这笔费用的？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "第8次咨询中，林思雨提到父母未经她商量，给她报名了老家的公务员考试培训班，学费是3000元。她原本不想去，但母亲哭着说“我们都是为了你好”，最终她妥协缴费，并用自己仅剩的生活费先垫付了这笔钱。",
+
+    "answer_source": {
+      "primary_session": 8,
+      "related_sessions": [1, 3, 5],
+      "event_id": "E8",
+      "evidence_type": "event_content",
+      "answer_span_hint": "父母未经商量；报名老家公务员考试培训班；学费3000元；母亲哭着说‘我们都是为了你好’；用仅剩的生活费垫付"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出父母未经商量给她报名老家公务员考试培训班，费用为3000元，并说明她最终用仅剩生活费垫付",
+      "completeness": "是否同时包含安排内容、费用金额、母亲的关键话语、林思雨原本不想去以及最终妥协缴费这几个事实",
+      "temporal_consistency": "是否识别这是第8次咨询/第10周左右的中后期事件，而非开学初父母催考公或第13次与父母达成妥协",
+      "no_hallucination": "是否避免编造如父母强制她退学、已经参加培训、培训费由父母支付、她与父母激烈争吵或彻底拒绝报名等未出现信息"
+    }
+  },
+  {
+    "task_id": "LSY528_MR_002",
+    "task_type": "memory_recall",
+    "case_id": "林思雨_528",
+
+    "question": "林思雨在最后阶段的咨询中提到，父母来参加毕业典礼时发生了什么？她向父母透露了什么机会，父亲最后是如何回应的？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "最后阶段的咨询中，林思雨提到父母来校参加毕业典礼。父母看到她消瘦的样子很心疼，但仍然念叨“考上公务员就好了”。林思雨鼓起勇气向父母透露自己拿到了一个NGO实习机会。父亲沉默后叹气，说：“随你吧，但家里没法再支援了。”这让她感到复杂，既有解脱，也有沉重、愧疚和对未来的不确定。",
+
+    "answer_source": {
+      "primary_session": 14,
+      "related_sessions": [13],
+      "event_id": "E14",
+      "evidence_type": "event_content_dialogue_and_summary",
+      "answer_span_hint": "父母来校参加毕业典礼；看到她消瘦；念叨考公务员；透露NGO实习机会；父亲沉默后说‘随你吧，但家里没法再支援了’；沉重和愧疚"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出毕业典礼场景、父母看到她消瘦后仍催考公务员、她透露NGO实习机会，以及父亲‘随你吧，但家里没法再支援了’的回应",
+      "completeness": "是否同时包含父母来校、消瘦与心疼、考公务员念叨、NGO实习机会、父亲沉默叹气后的回应和林思雨的复杂情绪",
+      "temporal_consistency": "是否识别这是最后阶段/第16周左右的事件，发生在与父母暂时妥协、毕业设计逐渐推进之后",
+      "no_hallucination": "是否避免编造如父母完全支持NGO、父亲断绝关系、她已经正式入职NGO、放弃毕业设计、考公成功或家庭完全和解等未出现信息"
+    }
+  }
+]

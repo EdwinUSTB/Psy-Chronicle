@@ -1,0 +1,58 @@
+[
+  {
+    "task_id": "CM357_MR_001",
+    "task_type": "memory_recall",
+    "case_id": "陈明_357",
+
+    "question": "陈明在第11次咨询中提到，同班女生主动找他做了什么？陈明当时有什么反应，最后是如何回应对方的？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "第11次咨询中，同班一位女生主动找陈明讨论小组作业后续，并约他去图书馆一起学习。陈明内心既惊喜又恐慌，担心自己表现不好，最终以“最近很忙”为由含糊推脱了对方的邀请。",
+
+    "answer_source": {
+      "primary_session": 11,
+      "related_sessions": [],
+      "event_id": "E11",
+      "evidence_type": "event_content",
+      "answer_span_hint": "同班女生主动找他讨论小组作业后续；约他去图书馆一起学习；既惊喜又恐慌；担心表现不好；以最近很忙为由推脱"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出女生主动讨论小组作业并约他去图书馆学习，以及陈明既惊喜又恐慌、最终以“最近很忙”为由推脱",
+      "completeness": "是否同时包含女生的行为、陈明的即时情绪、担心的内容和最终回应",
+      "temporal_consistency": "是否识别这是第11次咨询/第13周左右的中后期事件，而非早期组队被拒或宿舍聚餐事件",
+      "no_hallucination": "是否避免编造如女生表白、明确拒绝陈明、两人发生争吵、陈明接受邀约或已经建立亲密关系等未出现信息"
+    }
+  },
+  {
+    "task_id": "CM357_MR_002",
+    "task_type": "memory_recall",
+    "case_id": "陈明_357",
+
+    "question": "陈明在第15次咨询中提到，论文写作拖延触发了怎样的自我否定？他如何描述自己的内在批判声音？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "第15次咨询中，陈明因论文写作拖延陷入深层自我否定，把成绩差、写不出来或进展慢与自己的存在价值联系起来，觉得自己必须做出成绩才配存在。他能更清楚地描述内在批判声音，例如“你不行”“你不够快”，并意识到这个声音可能与早期比较经历有关。咨询中也提到“写一行”的微小行动实验能让压力稍微减轻，但他仍难以接纳暂时不知道方向的状态。",
+
+    "answer_source": {
+      "primary_session": 15,
+      "related_sessions": [],
+      "event_id": "E15",
+      "evidence_type": "summary",
+      "answer_span_hint": "论文写作拖延；成绩差等同于没有存在资格；必须做出成绩才配存在；你不行、你不够快；写一行实验；早期比较经历"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出第15次咨询的核心事实是论文拖延引发自我否定，并能复述内在批判声音如“你不行”“你不够快”",
+      "completeness": "是否包含论文拖延、自我价值与成绩/进展绑定、内在批判声音、早期比较经历来源以及“写一行”实验这几个关键事实",
+      "temporal_consistency": "是否识别这是最后阶段的咨询内容，而非第12周挂科、第14周食欲下降或第16周母亲电话事件",
+      "no_hallucination": "是否避免编造如论文已被判不及格、存在正式精神障碍诊断、药物治疗、自伤行为、已经完全恢复或已经彻底解决拖延问题等未出现信息"
+    }
+  }
+]

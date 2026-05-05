@@ -1,0 +1,58 @@
+[
+  {
+    "task_id": "ZC925_MR_001",
+    "task_type": "memory_recall",
+    "case_id": "张辰_925",
+
+    "question": "张辰在第13次咨询中提到，论文重写期间出现了哪些身体症状？校医给出了什么建议？张辰为什么拒绝这个建议？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "第13次咨询中，张辰在论文重写期间出现了心悸和手抖等症状。校医建议他去做心理咨询，但他害怕被贴上“心理问题”的标签，因此拒绝了这个建议。",
+
+    "answer_source": {
+      "primary_session": 13,
+      "related_sessions": [10, 11, 12],
+      "event_id": "E13",
+      "evidence_type": "event_content",
+      "answer_span_hint": "论文重写期间出现心悸和手抖症状；校医建议心理咨询；害怕被贴上“心理问题”标签而拒绝"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出身体症状是心悸和手抖，校医建议心理咨询，张辰因害怕被贴上“心理问题”标签而拒绝",
+      "completeness": "是否同时包含论文重写背景、具体症状、校医建议、拒绝原因和病耻感这一关键事实",
+      "temporal_consistency": "是否识别这是第13次咨询/第15周的后期事件，发生在就业焦虑、父母压力和网络逃避加重之后",
+      "no_hallucination": "是否避免编造如校医正式诊断、药物治疗、住院、休学、自伤行为、已经接受长期心理治疗或症状完全恢复等未出现信息"
+    }
+  },
+  {
+    "task_id": "ZC925_MR_002",
+    "task_type": "memory_recall",
+    "case_id": "张辰_925",
+
+    "question": "张辰在最后一次咨询中提到，考试结束后他主要担心哪些事情？他计划如何度过寒假来逃避这些压力？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "最后一次咨询中，张辰提到考试已经结束，但仍在等待成绩，晚上睡不好，心里一直悬着。他主要担心成绩出来后不知道如何向父母交代，也担心父母询问成绩、奖学金，以及质疑这个专业到底行不行。同时，他也面对是否转专业的迷茫。为了逃避这些压力，他计划整个寒假把自己锁在房间里打游戏，谁也不要来烦他。",
+
+    "answer_source": {
+      "primary_session": 15,
+      "related_sessions": [8, 9, 14],
+      "event_id": "E15",
+      "evidence_type": "event_content_and_dialogue",
+      "answer_span_hint": "考试考完了，现在就等成绩出来；每天晚上都会想，睡都睡不好；交代成绩；父母问奖学金；这个专业到底行不行；是否转专业；寒假把自己锁在房间里打游戏"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出他担心成绩、父母询问/评价、奖学金、专业选择与是否转专业，并计划寒假躲在房间打游戏",
+      "completeness": "是否同时包含考试结束等待成绩、睡不好、父母成绩压力、专业/转专业迷茫、寒假锁在房间打游戏逃避这几个关键事实",
+      "temporal_consistency": "是否识别这是最后一次咨询/第16周事件，发生在期末考试前游戏公会胜利后的情绪崩溃、现实考试压力之后",
+      "no_hallucination": "是否避免编造如已经确定转专业、成绩已经公布、父母已经严厉处罚、已经拿不到学位、已经退学、寒假完全断联或彻底沉迷到失去现实功能等未出现信息"
+    }
+  }
+]

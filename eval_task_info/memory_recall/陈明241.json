@@ -1,0 +1,58 @@
+[
+  {
+    "task_id": "CM241_MR_001",
+    "task_type": "memory_recall",
+    "case_id": "陈明_241",
+
+    "question": "陈明在第9次咨询中提到，自己在图书馆学习时出现了哪些具体身体反应？当时触发这些反应的学习内容是什么？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "第9次咨询中，陈明提到自己在图书馆学习时，看到宏观经济学公式，尤其是类似 Cobb-Douglas 函数这类内容时，突然出现心慌、手抖、胸口发闷，无法继续集中注意力。同时，他这一阶段还伴随食欲不振和失眠加剧。",
+
+    "answer_source": {
+      "primary_session": 9,
+      "related_sessions": [],
+      "event_id": "E9",
+      "evidence_type": "dialogue_and_summary",
+      "answer_span_hint": "图书馆学习时；宏观经济学公式；Cobb-Douglas函数；心慌、手抖、胸口发闷；食欲不振与失眠加剧"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出身体反应是心慌、手抖、胸口发闷、无法集中注意力，并且触发内容是宏观经济学公式或Cobb-Douglas函数",
+      "completeness": "是否同时覆盖身体反应、学习场景、触发内容，以及食欲不振和失眠加剧等状态变化",
+      "temporal_consistency": "是否识别该事件发生在第9次咨询的中后期阶段，而非早期微观经济学听不懂或期中挂科阶段",
+      "no_hallucination": "是否避免编造如晕倒、送医、正式诊断、药物治疗、自伤行为或完全停止学习等未出现信息"
+    }
+  },
+  {
+    "task_id": "CM241_MR_002",
+    "task_type": "memory_recall",
+    "case_id": "陈明_241",
+
+    "question": "陈明在第15次咨询中如何描述期末考试周的状态？他对哪些类型的题目仍然感到特别困难？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "第15次咨询中，陈明处在期末考试周，同时承受补考和期末考的双重压力。他在考场上状态起伏，感到非常疲惫，有时看着试卷会脑子突然空白；部分科目还能靠死记硬背勉强作答，但面对需要灵活运用经济学模型的题目时仍然感到绝望。",
+
+    "answer_source": {
+      "primary_session": 15,
+      "related_sessions": [12, 14],
+      "event_id": "E15",
+      "evidence_type": "event_content_and_dialogue",
+      "answer_span_hint": "期末考试周；补考和期末考的双重压力；考场状态起伏；脑子突然空白；死记硬背勉强作答；灵活运用经济学模型的题目感到绝望"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出第15次咨询中的核心状态是期末考试周、补考与期末考双重压力、考场脑子空白和疲惫，而不是泛化为普通考试焦虑",
+      "completeness": "是否包含双重考试压力、考场状态起伏、死记硬背可以勉强应对、经济学模型灵活运用题仍然困难这几个关键事实",
+      "temporal_consistency": "是否识别这是第15次咨询的后期事件，发生在补考复习、父亲叹气内化和首次心理咨询之后",
+      "no_hallucination": "是否避免编造如期末已经全部挂科、补考已经失败、被学校处分、正式休学、完全崩溃送医或已经恢复正常等未出现信息"
+    }
+  }
+]

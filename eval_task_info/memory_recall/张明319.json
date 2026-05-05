@@ -1,0 +1,58 @@
+[
+  {
+    "task_id": "ZM319_MR_001",
+    "task_type": "memory_recall",
+    "case_id": "张明_319",
+
+    "question": "张明在第13次咨询中提到，自己在食堂连续一周有什么饮食变化？同学对此说了什么？他真实这样做的原因是什么，之后在人际上出现了什么变化？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "第13次咨询中，张明提到自己在食堂连续一周只点最便宜的素菜。同学看到后调侃他说“减肥成功”，但实际上他这样做是因为经济拮据、需要节省生活费。这件事让他感到羞耻，并开始回避集体用餐，进一步自我封闭。",
+
+    "answer_source": {
+      "primary_session": 13,
+      "related_sessions": [8, 10],
+      "event_id": "E13",
+      "evidence_type": "event_content",
+      "answer_span_hint": "连续一周只点最便宜的素菜；被同学调侃“减肥成功”；实际上是因为经济拮据；开始回避集体用餐"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出他连续一周只点最便宜的素菜，并说明同学调侃“减肥成功”，真实原因是经济拮据而不是主动减肥",
+      "completeness": "是否同时包含饮食变化、同学调侃、真实经济原因、羞耻感和回避集体用餐这几个关键事实",
+      "temporal_consistency": "是否识别这是第13次咨询/第15周的后期事件，发生在父亲手术压力、实习薪资低于预期和长期经济压力之后",
+      "no_hallucination": "是否避免编造如他完全不吃饭、被同学恶意霸凌、正式营养不良诊断、向学校申请救助成功或经济问题已经解决等未出现信息"
+    }
+  },
+  {
+    "task_id": "ZM319_MR_002",
+    "task_type": "memory_recall",
+    "case_id": "张明_319",
+
+    "question": "张明在最后一次咨询中计算学期开销后发现了什么问题？他面临哪两个选择？这让他产生了怎样的心理状态？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "最后一次咨询中，张明在学期结束后计算发现，自己的兼职收入和奖学金仍然无法覆盖下学期的开销。因此他面临两个选择：要么向家里开口要钱，要么继续寻找更多兼职来补足缺口。这让他陷入深深的无助感、持续的经济焦虑和自我价值怀疑。",
+
+    "answer_source": {
+      "primary_session": 15,
+      "related_sessions": [1, 8, 12, 14],
+      "event_id": "E15",
+      "evidence_type": "event_content",
+      "answer_span_hint": "学期结束；兼职收入和奖学金仍无法覆盖下学期开销；必须向家里开口或寻找更多兼职；深深的无助"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出兼职收入和奖学金仍无法覆盖下学期开销，并说明他必须在向家里开口和寻找更多兼职之间选择",
+      "completeness": "是否同时包含学期结束后的计算结果、收入来源不足、两个选择、无助感、经济焦虑和自我价值怀疑",
+      "temporal_consistency": "是否识别这是最后一次咨询/第16周的最终阶段事件，发生在初创公司低薪offer、食堂节省饮食和期末考试疲惫之后",
+      "no_hallucination": "是否避免编造如他已经向家里借到钱、奖学金被取消、已经找到第二份兼职、实习工资足够覆盖开销、父母拒绝帮助或已经退学等未出现信息"
+    }
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "task_id": "LSY828_MR_001",
+    "task_type": "memory_recall",
+    "case_id": "林思雨_828",
+
+    "question": "林思雨在第10次咨询中提到，自己在图书馆发生了什么身体状况？是谁把她送到校医院的，医生给出了什么判断和建议？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "第10次咨询中，林思雨在图书馆突然焦虑发作，出现呼吸困难，被同学送往校医院。医生诊断为急性焦虑症，并建议她休学调整。",
+
+    "answer_source": {
+      "primary_session": 10,
+      "related_sessions": [6, 7, 8, 9],
+      "event_id": "E10",
+      "evidence_type": "event_content",
+      "answer_span_hint": "图书馆突然焦虑发作；呼吸困难；被同学送往校医院；医生诊断为急性焦虑症；建议休学调整"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出地点是图书馆，具体状况是焦虑发作和呼吸困难，并说明是同学送往校医院、医生诊断为急性焦虑症且建议休学调整",
+      "completeness": "是否同时包含发生地点、身体反应、帮助者、医生判断和医生建议这几个关键事实",
+      "temporal_consistency": "是否识别这是第10次咨询/第11周左右的中后期事件，发生在设计院实习邀请、秋招受挫、持续失眠和创作压力之后",
+      "no_hallucination": "是否避免编造如长期住院、药物治疗、自伤行为、父母当场介入、已经正式休学或已经完全恢复等未出现信息"
+    }
+  },
+  {
+    "task_id": "LSY828_MR_002",
+    "task_type": "memory_recall",
+    "case_id": "林思雨_828",
+
+    "question": "林思雨在第14次咨询中提到，毕业设计方案后来是如何调整的？最终评审结果如何？这一结果对她的专业自信有什么影响？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "第14次咨询中，林思雨重新修改了毕业设计方案，在实用性与艺术性之间找到了一个平衡点，最终顺利通过最终评审。这一结果让她重拾了部分专业自信。",
+
+    "answer_source": {
+      "primary_session": 14,
+      "related_sessions": [9, 10, 13],
+      "event_id": "E14",
+      "evidence_type": "event_content",
+      "answer_span_hint": "重新修改毕业设计方案；在实用性与艺术性间找到平衡点；顺利通过最终评审；重拾部分专业自信"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出她重新修改毕业设计，并在实用性与艺术性之间找到平衡，最终通过评审",
+      "completeness": "是否同时包含方案调整方向、最终评审结果和专业自信变化三个关键事实",
+      "temporal_consistency": "是否识别这是第14次咨询/第15周的后期事件，发生在父母妥协、急性焦虑、设计院实习压力和创作停滞之后",
+      "no_hallucination": "是否避免编造如评审失败、获得最高分、被导师公开表扬、已经进入小型创意工作室、已经彻底解决职业迷茫或完全摆脱父母压力等未出现信息"
+    }
+  }
+]

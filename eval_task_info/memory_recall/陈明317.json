@@ -1,0 +1,58 @@
+[
+  {
+    "task_id": "CM317_MR_001",
+    "task_type": "memory_recall",
+    "case_id": "陈明_317",
+
+    "question": "陈明在第11次咨询中提到，室友A发现他成绩下滑后做了什么？陈明当时是如何回应的，事后又有什么感受？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "第11次咨询中，室友A发现陈明成绩下滑后，主动提议和他一起复习。陈明虽然内心可能需要这个支持，但因为害怕暴露自己的弱点，最终婉拒了室友A的邀请。事后，他又后悔自己错过了一次可能和室友建立联系、获得帮助的机会。",
+
+    "answer_source": {
+      "primary_session": 11,
+      "related_sessions": [],
+      "event_id": "E11",
+      "evidence_type": "event_content",
+      "answer_span_hint": "室友A发现陈明成绩下滑；主动提议一起复习；因害怕暴露弱点而婉拒；事后后悔错过交友机会"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出室友A主动提议一起复习，以及陈明因害怕暴露弱点而婉拒",
+      "completeness": "是否同时包含室友A的行为、陈明的回应、拒绝背后的原因和事后的后悔感",
+      "temporal_consistency": "是否识别该事件发生在第11次咨询的中后期阶段，而非早期宿舍作息冲突或第8周秋游事件",
+      "no_hallucination": "是否避免编造如室友A嘲笑他、强迫他复习、两人发生争吵、陈明最终接受复习邀请或已经建立稳定友谊等未出现信息"
+    }
+  },
+  {
+    "task_id": "CM317_MR_002",
+    "task_type": "memory_recall",
+    "case_id": "陈明_317",
+
+    "question": "在最后一次咨询中，陈明期末考试后的成绩情况如何？他在学期总结中写下了哪句话？",
+
+    "input_to_model": {
+      "consultation_history": "提供该case完整咨询历史，包括所有session对话与summary"
+    },
+
+    "reference_answer": "最后一次咨询中，陈明期末考试后的成绩虽未完全提升，但生物化学达到了补考线。学期总结中，他写下：“学会了独自承受，却还没学会如何求助。”",
+
+    "answer_source": {
+      "primary_session": 15,
+      "related_sessions": [14],
+      "event_id": "E15",
+      "evidence_type": "event_content",
+      "answer_span_hint": "期末考试结束；成绩虽未完全提升；生物化学通过补考线；学会了独自承受，却还没学会如何求助"
+    },
+
+    "evaluation_focus": {
+      "accuracy": "是否准确指出期末成绩没有完全提升，但生物化学通过补考线，并准确复述学期总结中的关键句",
+      "completeness": "是否同时包含成绩状态、生物化学补考线结果、学期总结原句三个关键事实",
+      "temporal_consistency": "是否识别这是最后一次咨询/期末考试结束后的事件，而非第11周期中成绩不及格或第13次急性焦虑发作",
+      "no_hallucination": "是否避免编造如期末全部通过、补考失败、成绩大幅提升、已经学会求助、已经完全融入宿舍或完全恢复等未出现信息"
+    }
+  }
+]

@@ -1,154 +1,135 @@
-# Psy-Chronicle & CPCD
+<h1 align="center">Psy-Chronicle</h1>
+<h3 align="center">A Structured Pipeline for Synthesizing Long-Horizon Campus Psychological Counseling Dialogues</h3>
 
-## Overview
+<p align="center">
+  <a href="https://github.com/EdwinUSTB/Psy-Chronicle"><img src="https://img.shields.io/badge/Dataset-CPCD-blue" alt="CPCD"></a>
+  <a href="https://github.com/EdwinUSTB/Psy-Chronicle"><img src="https://img.shields.io/badge/Benchmark-CPCD--Bench-green" alt="CPCD-Bench"></a>
+  <a href="https://modelscope.cn/collections/gouchaogui/Psy-Chronicle"><img src="https://img.shields.io/badge/ModelScope-Collection-purple" alt="CPCD-Chat"></a>
+</p>
 
-**Psy-Chronicle** is a structured pipeline for synthesizing long-horizon campus psychological counseling dialogues. This repository contains:
+![Method Overview](pipeline.png)
+This is the official GitHub repository for **Psy-Chronicle: A Structured Pipeline for Synthesizing Long-Horizon Campus Psychological Counseling Dialogues**.
 
-1. The **CPCD** (Counselor Psychological Counseling Dialogue) dataset - a Chinese long-horizon campus psychological counseling dataset
-2. The **CPCD-Bench** benchmark - for evaluating models' long-horizon campus counseling capabilities
+Psy-Chronicle is a structured data-generation framework for synthesizing long-horizon campus psychological counseling dialogues. Unlike single-turn or short multi-turn counseling datasets, Psy-Chronicle models counseling as a semester-level process that connects student profiles, campus stress events, cross-session counseling interactions, and structured memory updates.
 
-### Key Features
+Based on Psy-Chronicle, we release:
 
-- **100 student profiles** with four-dimensional annotations: basic background, personality tendencies, family/social support, and core psychological conflicts
-- **90,000 dialogue turns** covering semester-long counseling trajectories
-- **~11.45 million characters** of Chinese counseling text
+- **CPCD**: a Chinese long-horizon campus psychological counseling dialogue dataset.
+- **CPCD-Bench**: a benchmark for evaluating long-horizon campus counseling capabilities.
+- **CPCD-Chat**: Qwen3-based models fine-tuned on CPCD.
+
+> **Important note**: CPCD is a synthetic research dataset. It should not be used as a substitute for professional psychological counseling, clinical diagnosis, treatment, or crisis intervention.
+
+## News
+- [Coming soon]Paper preprint is available in this repository.
+- [2026.5.14]Dataset, benchmark, and models are available on ModelScope.
 
 
-## Dataset Structure
+## Links
 
-```
-CPCD/
+- **Repository**: <https://github.com/EdwinUSTB/Psy-Chronicle>
+- **ModelScope Collection**: <https://modelscope.cn/collections/gouchaogui/Psy-Chronicle>
+- **Paper**: Preprint / arXiv version
+
+
+
+## CPCD Dataset
+
+CPCD is organized by student trajectory. Each trajectory contains a student profile, a temporal stress event graph, cross-session counseling dialogues, and structured memory summaries.
+
+| Component | Value |
+|---|---:|
+| Student Profiles | 100 |
+| Counseling Dialogue Units | 90,000 |
+| Chinese Characters | 11,452,843 |
+| Avg. Characters / Dialogue Unit | 127 |
+| Student-side Characters | 3,246,475 |
+| Counselor-side Characters | 8,206,368 |
+
+The campus stress domains include academic pressure, interpersonal relationships, career development, family and financial stress, and physical and mental health.
+
+## CPCD-Bench
+
+CPCD-Bench evaluates long-horizon campus counseling ability from three perspectives:
+
+| Task | Input | Evaluation Focus | Samples |
+|---|---|---|---:|
+| Session-level Response (SR) | Student profile, current context, historical memory | Empathy, coherence, professionalism, history utilization | 99 |
+| Memory Recall (MR) | Student profile, complete counseling history | Long-horizon retrieval, factual accuracy, temporal consistency | 40 |
+| Temporal-Causal Reasoning (TCR) | Student profile, complete counseling history | Temporal ordering, event-chain organization, causal reasoning | 20 |
+
+## Models
+
+We fine-tune Qwen3 base models on CPCD and release the **CPCD-Chat** series:
+
+- **CPCD-Chat-4B**
+- **CPCD-Chat-8B**
+
+The released datasets, benchmark resources, and models are available in the ModelScope collection:
+
+<https://modelscope.cn/collections/gouchaogui/Psy-Chronicle>
+
+## Repository Structure
+
+```text
+.
 ├── conversation/                    # Raw counseling session dialogues
-│   └── {session_num}/              # Session directory (1-10)
+│   └── {session_num}/
 │       └── consultation_events_{case_id}.json
 │
-└── eval_task_info/                  # Evaluation tasks and scripts
-    ├── TCR/                       # Temporal-Causal Reasoning task
-    │   ├── {case_id}.json         # Task JSONs
-    │   ├── rubric.md             # Scoring rubric
-    │   ├── tcr_eval_online.py   # Online evaluation script
-    │   └── tcr_eval_local.py    # Offline evaluation script
-    │
-    ├── SRG/                      # Session Reflection Generation task
-    │   ├── {case_id}.json
-    │   ├── rubric.md
-    │   ├── srg_eval_online.py
-    │   └── srg_eval_local.py
-    │
-    ├── memory_recall/              # Memory Recall task
-    │   ├── {case_id}.json
-    │   ├── rubric.md
-    │   ├── memory_recall_eval_online.py
-    │   └── memory_recall_eval_local.py
-    │
-    └── full_session/              # Complete session histories
-        └── {case_id}_fullsession.json
+└── eval_task_info/                  # CPCD-Bench tasks and evaluation scripts
+    ├── SRG/                         # Session-level Response
+    ├── memory_recall/               # Memory Recall
+    ├── TCR/                         # Temporal-Causal Reasoning
+    └── full_session/                # Complete session histories
 ```
 
-## CPCD-Bench Tasks
-
-CPCD-Bench evaluates models across three dimensions of long-horizon campus counseling:
-
-### 1. Temporal-Causal Reasoning (TCR)
-
-Analyze the temporal-causal evolution of a counselee's core distress across multiple sessions.
-
-**Evaluation Dimensions** (0-5 scale):
-- **Temporal Accuracy**: Correct chronological ordering of events
-- **Causal Coherence**: Logical cause-effect relationships
-- **Completeness**: Coverage of key stages (early triggers, middle amplification, late risk escalation, subtle turning points)
-- **No Hallucination**: No fabricated events or characters
-
-### 2. Session Reflection Generation (SRG)
-
-Generate empathetic and coherent counselor responses that maintain consistency with counseling history.
-
-**Evaluation Dimensions** (0-5 scale):
-- **Empathy**: Accurate identification and acknowledgment of emotions
-- **Coherence**: Consistency with history and current context
-- **Professionalism**: Appropriate counseling techniques and boundaries
-
-### 3. Long-Term Memory Recall (MR)
-
-Accurately recall and organize relevant information from long counseling histories.
-
-**Evaluation Dimensions** (0-5 scale):
-- **Accuracy**: Factual correctness
-- **Completeness**: Coverage of all key points
-- **Temporal Consistency**: Correct event ordering
-- **No Hallucination**: No fabricated information
-
-## Environment Setup
+## Setup
 
 ```bash
-# Create environment
-conda create -n psy python=3.10
-conda activate psy
-
-# Install dependencies
+conda create -n psy-chronicle python=3.10
+conda activate psy-chronicle
 pip install openai pandas tqdm
-
-# Set API key (OpenRouter recommended)
-export OPENROUTER_API_KEY="your_api_key"
 ```
 
-## Running Evaluations
-
-### Online Evaluation (API Generation + Scoring)
+The evaluation scripts use an OpenAI-compatible client through OpenRouter by default.
 
 ```bash
-# TCR Evaluation
-python eval_task_info/TCR/tcr_eval_online.py \
-  --tasks "./eval_task_info/TCR" \
-  --rubric "./eval_task_info/TCR/rubric.md" \
-  --full-session-dir "./eval_task_info/full_session" \
-  --target-model "model/identifier" \
-  --judge-model "openai/gpt-5" \
-  --output "./outputs/tcr_eval.jsonl" \
-  --csv-output "./outputs/tcr_eval.csv"
+export OPENROUTER_API_KEY="your_openrouter_api_key"
+```
 
-# SRG Evaluation
+## Running Evaluation
+
+Example for Session-level Response:
+
+```bash
 python eval_task_info/SRG/srg_eval_online.py \
   --tasks "./eval_task_info/SRG" \
   --rubric "./eval_task_info/SRG/rubric.md" \
   --full-session-dir "./eval_task_info/full_session" \
   --target-model "model/identifier" \
-  --judge-model "openai/gpt-5" \
-  --output "./outputs/srg_eval.jsonl" \
-  --csv-output "./outputs/srg_eval.csv"
-
-# Memory Recall Evaluation
-python eval_task_info/memory_recall/memory_recall_eval_online.py \
-  --tasks "./eval_task_info/memory_recall" \
-  --rubric "./eval_task_info/memory_recall/rubric.md" \
-  --full-session-dir "./eval_task_info/full_session" \
-  --target-model "model/identifier" \
-  --judge-model "openai/gpt-5" \
-  --output "./outputs/mr_eval.jsonl" \
-  --csv-output "./outputs/mr_eval.csv"
+  --judge-model "openai/gpt-5.2" \
+  --output "./outputs/sr_eval.jsonl" \
+  --csv-output "./outputs/sr_eval.csv"
 ```
 
-### Offline Evaluation (Scoring Local Responses)
+Offline evaluation scripts are also provided for scoring pre-generated model responses.
 
-```bash
-# Prepare CSV with model responses (columns: task_id, model_response)
-python eval_task_info/TCR/tcr_eval_local.py \
-  --input-csv "./results/model_responses.csv" \
-  --tasks "./eval_task_info/TCR" \
-  --rubric "./eval_task_info/TCR/rubric.md" \
-  --full-session-dir "./eval_task_info/full_session" \
-  --judge-model "openai/gpt-5" \
-  --output "./outputs/tcr_eval.jsonl" \
-  --csv-output "./outputs/tcr_eval.csv"
+## Citation
+
+If you find this repository useful, please cite our work:
+
+```bibtex
+@misc{gou_psychronicle,
+  title  = {Psy-Chronicle: A Structured Pipeline for Synthesizing Long-Horizon Campus Psychological Counseling Dialogues},
+  author = {Chaogui Gou and Jiarui Liang},
+  note   = {Preprint},
+  url    = {https://github.com/EdwinUSTB/Psy-Chronicle}
+}
 ```
 
-## Dataset Statistics
+## Ethical Use
 
-| Component | Count | Description |
-|-----------|-------|-------------|
-| Student Profiles | 100 | Four-dimensional annotations |
-| Dialogue Turns | ~90,000 | Semester-long trajectories |
-| Text Volume | ~11.45M chars | Chinese counseling text |
-| TCR Tasks | 99 | Temporal-causal reasoning cases |
-| SRG Tasks | 40 | Session reflection generation cases |
-| MR Tasks | 20 | Memory recall cases |
+CPCD is constructed from synthetic student profiles, temporal stress event graphs, and simulated counseling dialogues rather than real counseling records. The dataset is intended for research and evaluation only.
+
+Models trained or evaluated with CPCD may still generate inappropriate, incomplete, or overly generic responses, especially in high-risk mental-health situations. Any deployment-oriented use should include professional review, safety evaluation, and clear user-facing disclaimers.

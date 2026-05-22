@@ -21,7 +21,7 @@ Based on Psy-Chronicle, we release:
 > **Important note**: CPCD is a synthetic research dataset. It should not be used as a substitute for professional psychological counseling, clinical diagnosis, treatment, or crisis intervention.
 
 ## News
-- [Coming soon]Paper preprint is available in this repository.
+- [2026.5.22]Paper preprint is available in this repository.
 - [2026.5.14]Dataset, benchmark, and models are available on ModelScope.
 
 
@@ -29,7 +29,7 @@ Based on Psy-Chronicle, we release:
 
 - **Repository**: <https://github.com/EdwinUSTB/Psy-Chronicle>
 - **ModelScope Collection**: <https://modelscope.cn/collections/gouchaogui/Psy-Chronicle>
-- **Paper**: Preprint / arXiv version
+- **Paper**: <https://arxiv.org/abs/2605.22140>
 
 
 
@@ -124,7 +124,7 @@ If you find this repository useful, please cite our work:
   title  = {Psy-Chronicle: A Structured Pipeline for Synthesizing Long-Horizon Campus Psychological Counseling Dialogues},
   author = {Chaogui Gou and Jiarui Liang},
   note   = {Preprint},
-  url    = {https://github.com/EdwinUSTB/Psy-Chronicle}
+  url    = {https://arxiv.org/abs/2605.22140}
 }
 ```
 

@@ -21,6 +21,7 @@ Based on Psy-Chronicle, we release:
 > **Important note**: CPCD is a synthetic research dataset. It should not be used as a substitute for professional psychological counseling, clinical diagnosis, treatment, or crisis intervention.
 
 ## News
+- [2026.5.25]Dataset, benchmark, and models are available on Hugging face.
 - [2026.5.22]Paper preprint is available in this repository.
 - [2026.5.14]Dataset, benchmark, and models are available on ModelScope.
 
@@ -29,6 +30,7 @@ Based on Psy-Chronicle, we release:
 
 - **Repository**: <https://github.com/EdwinUSTB/Psy-Chronicle>
 - **ModelScope Collection**: <https://modelscope.cn/collections/gouchaogui/Psy-Chronicle>
+- **Hugging Face Collection**: <https://huggingface.co/collections/EdwinUstb/psy-chronicle>
 - **Paper**: <https://arxiv.org/abs/2605.22140>
 
 

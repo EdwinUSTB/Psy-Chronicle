@@ -7,7 +7,7 @@
   <a href="https://modelscope.cn/collections/gouchaogui/Psy-Chronicle"><img src="https://img.shields.io/badge/ModelScope-Collection-purple" alt="CPCD-Chat"></a>
 </p>
 
-![Method Overview](pipeline.png)
+![Method Overview](pipeline.jpg)
 This is the official GitHub repository for **Psy-Chronicle: A Structured Pipeline for Synthesizing Long-Horizon Campus Psychological Counseling Dialogues**.
 
 Psy-Chronicle is a structured data-generation framework for synthesizing long-horizon campus psychological counseling dialogues. Unlike single-turn or short multi-turn counseling datasets, Psy-Chronicle models counseling as a semester-level process that connects student profiles, campus stress events, cross-session counseling interactions, and structured memory updates.
@@ -124,7 +124,7 @@ If you find this repository useful, please cite our work:
 ```bibtex
 @misc{gou_psychronicle,
   title  = {Psy-Chronicle: A Structured Pipeline for Synthesizing Long-Horizon Campus Psychological Counseling Dialogues},
-  author = {Chaogui Gou and Jiarui Liang},
+  author = {Chaogui Gou},
   note   = {Preprint},
   url    = {https://arxiv.org/abs/2605.22140}
 }
